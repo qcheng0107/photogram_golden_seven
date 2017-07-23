@@ -60,7 +60,7 @@ class PicturesController < ApplicationController
      i =Photo.find(params["toast_id"])
      i.destroy
      @photo_count = Photo.count
-       render("pic_templates/destroy_row.html.erb") 
+       redirect_to("/photos") 
      
     end
 end 

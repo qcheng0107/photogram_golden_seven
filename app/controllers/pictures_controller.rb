@@ -13,8 +13,8 @@ class PicturesController < ApplicationController
        
        @photo_count = Photo.count
        
-       redirect_to("/photos")
-       #render("pic_templates/create_row.html.erb")
+      redirect_to("/photos")
+       #render("pic_templates/index.html.erb")
    end
    
    def index

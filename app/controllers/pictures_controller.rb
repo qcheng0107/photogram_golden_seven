@@ -31,7 +31,7 @@ class PicturesController < ApplicationController
        pic = Photo.find(the_id_number)
        @the_source = pic.source
        @the_caption = pic.caption
-    #   @the_time =
+       @the_time = pic.created_at
        @an_id = params["the_id"]
    
    render("pic_templates/show.html.erb")

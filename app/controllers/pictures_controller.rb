@@ -13,7 +13,7 @@ class PicturesController < ApplicationController
        
        @photo_count = Photo.count
        
-       redirect_to("https://phtogram-qcheng.c9users.io/photos")
+       redirect_to("/photos")
        #render("pic_templates/create_row.html.erb")
    end
    

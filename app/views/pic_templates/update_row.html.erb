@@ -1,0 +1,24 @@
+<h1>
+    Photo Details
+</h1>
+<p>
+    <%= @caption %>
+</p>
+<div>
+    <img src="<%= @source %>">
+</div>
+<p>
+    <%= @the_time %>
+</p>
+
+        <a href = "/photos" class="btn btn-default">
+            Go back
+          </a>
+
+        <a href = "/photos/<%= @an_id %>/edit" class="btn btn-default">
+            Edit
+          </a>
+    
+        <a href = "/delete_photo/<%= @an_id %>" class="btn btn-default">
+            Delete
+          </a>

@@ -7,14 +7,14 @@ class PicturesController < ApplicationController
    def create_row
        
        p = Photo.new
-       p.source = params["the_source"]
-       p.caption = params["the_caption"]
+       p.source = params[:the_source]
+       p.caption = params[:the_caption]
        p.save
        
-       @photo_count = Photo.count
+    #   @photo_count = Photo.count
        
-    #   redirect_to("/photos")
-       render("pic_templates/index.html.erb")
+      redirect_to("/photos")
+    #   render("pic_templates/index.html.erb")
    end
    
    def index
@@ -51,8 +51,10 @@ class PicturesController < ApplicationController
     
     def update_row
         
-        an_id = params["some_id"]
+        an_id = params[:some_id]
        pic = Photo.find(an_id)
+       pic.source = params[:the_source]
+       pic.caption = params[:the_caption]
        @source = pic.source
        @caption = pic.caption
        @the_time = pic.created_at

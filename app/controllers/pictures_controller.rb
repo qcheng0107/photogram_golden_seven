@@ -41,10 +41,11 @@ class PicturesController < ApplicationController
         
         the_id = params["an_id"]
         pic = Photo.find(the_id)
-      @the_source = pic.source
-      @the_caption = pic.caption
-      @an_id = params["an_id"]
-        pic.save
+        @the_source = pic.source
+        @the_caption = pic.caption
+        
+        @an_id = params["an_id"]
+        
         
        render("pic_templates/edit_form.html.erb")
     end
@@ -59,7 +60,8 @@ class PicturesController < ApplicationController
        @caption = pic.caption
        @the_time = pic.created_at
        @an_id = params["the_id"]
-      render("pic_templates/update_row.html.erb")
+       pic.save
+      render("pic_templates/show.html.erb")
     end
     
     def destroy_row

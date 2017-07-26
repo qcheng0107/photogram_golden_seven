@@ -13,7 +13,7 @@ class PicturesController < ApplicationController
        
     #   @photo_count = Photo.count
        
-      redirect_to("/photos")
+      redirect_to "/photos/#{p.id}" 
     #   render("pic_templates/index.html.erb")
    end
    
@@ -27,7 +27,7 @@ class PicturesController < ApplicationController
    
     def show
    
-       the_id_number = params["the_id"]
+       the_id_number = params[:the_id]
        pic = Photo.find(the_id_number)
        @the_source = pic.source
        @the_caption = pic.caption
@@ -59,9 +59,9 @@ class PicturesController < ApplicationController
        @source = pic.source
        @caption = pic.caption
        @the_time = pic.created_at
-       @an_id = params["the_id"]
+       @the_id = params["the_id"]
        pic.save
-      render("pic_templates/show.html.erb")
+      redirect_to "/photos/#{pic.id}"
     end
     
     def destroy_row

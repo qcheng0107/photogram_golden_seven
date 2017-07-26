@@ -13,7 +13,7 @@ class PicturesController < ApplicationController
        
     #   @photo_count = Photo.count
        
-      redirect_to "/photos/#{p.id}" 
+      redirect_to "/photos" 
     #   render("pic_templates/index.html.erb")
    end
    
